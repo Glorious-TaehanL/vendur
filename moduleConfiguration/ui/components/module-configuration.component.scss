@@ -1,0 +1,17 @@
+table {
+    width: 800px;
+}
+table tr {
+    width: 800px;
+}
+
+table th.name { width: 400px; }
+table th.status { width: 200px; }
+table th.edit { width: 200px; }
+
+table td.name { width: 400px; text-align: center; }
+table td.status { width: 200px; text-align: center; }
+table td.status .clr-toggle-wrapper { width: 35px; margin: 0 auto;}
+table td.edit { width: 200px; text-align: center; }
+
+.btn-block { width: 100px; position: absolute; top: 30px; right: 30px;}

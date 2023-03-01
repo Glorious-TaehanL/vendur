@@ -1,0 +1,34 @@
+<h1>Module Configuration</h1>
+
+<form #moduleForm="ngForm">
+    <button class="btn btn-primary btn-block"
+        (click)="updateModule()">
+        Update
+    </button>  
+<div [(ngModel)] = "module" name="module">
+<table>
+    <tr>
+        <th class="name">Name</th>
+        <th class="status">Status</th>
+        <th class="edit">Action</th>
+    </tr>
+    <tr *ngFor="let mod of module; let index = index" class="modulebox">
+        <td [(ngModel)]="mod.name" class="modname name">{{ mod.name }}</td>
+        <td class="modstatus status">
+            <clr-toggle-wrapper>
+                <input 
+                        type="checkbox"
+                        clrToggle
+                        id= {{mod.name}}
+                        name="{{mod.name}}"
+                        [(ngModel)]="module[index].status"
+                        />
+            </clr-toggle-wrapper>
+        </td>
+        <td class="edit">
+            <a href={{baseUrl}} [(ngModule)]="baseUrl">Link to Page</a>
+        </td>
+    </tr>
+</table>     
+</div>
+</form>
