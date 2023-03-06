@@ -1,0 +1,23 @@
+<h1>New Arrivals</h1>
+
+<h3>New Arrivals list</h3>
+<div class="product-newarrival" *ngFor= "let newArrival of newArrivals;">
+<ng-template [ngIf]="newArrival" [ngIfElse]="placeholder">
+    <a [routerLink]="['/product', newArrival.slug]" class="image-wrapper">
+        <img class="product-image rounded" [src]="newArrival.featuredAsset | assetPreview:250:250">
+    </a>
+    <div class="product-newarrival-list">
+        <a [routerLink]="['/product', newArrival.slug]" class="product-name">
+            {{ newArrival.name }}
+        </a>
+        
+    </div>
+</ng-template>
+<ng-template #placeholder>
+    <div class="placeholder-image loading-placeholder"></div>
+    <div class="newarrival-body">
+        <div class="placeholder-title loading-placeholder"></div>
+        <div class="placeholder-body loading-placeholder"></div>
+    </div>
+</ng-template>
+</div>
